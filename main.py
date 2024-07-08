@@ -49,5 +49,4 @@ if (today_month, today_day) in birthdays_dict:
         connection.starttls()
         connection.login(user=my_email, password=my_password)
         connection.sendmail(from_addr=my_email, to_addrs=recipient_email, msg=f"Subject:Birthday wish\n\n{letter}")
-else:
-    print("No birthdays today")
+
