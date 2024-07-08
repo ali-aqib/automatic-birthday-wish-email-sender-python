@@ -3,6 +3,7 @@ import datetime as dt
 import random
 import smtplib
 
+your_name = "Your_Name"
 # Getting today's month and day
 now = dt.datetime.now()
 today_day = now.day
@@ -30,14 +31,14 @@ if (today_month, today_day) in birthdays_dict:
         content = r_file.read()
 
         # Replacing [NAME] with the person name in selected letter
-        letter = content.replace("[NAME]", birthday_person["name"])
+        letter = content.replace("[NAME]", birthday_person["name"]).replace("[Your Name]", your_name)
 
     # Setting up the SMTP server
     # Gmail(smtp.gmail.com), Yahoo(smtp.mail.yahoo.com), Hotmail(smtp.live.com), Outlook(smtp-mail.outlook.com)
 
     with smtplib.SMTP('smtp.gmail.com') as connection:  # SMTP server of your email service provider
         # your email
-        my_email = "your_email@example.com"
+        my_email = "you_email@abc.com"
 
         # password of your email account
         my_password = "password"
